@@ -103,7 +103,7 @@ const handleGoogleError = () => {
       <button className={Styles.button} onClick={handleSubmit}>
         Submit
       </button>
-      <div className="google-btn">
+      <div className="google-btn" style={{width:"100%"}}>
         <GoogleLogin 
         onSuccess={ handleGoogleSuccess}
         onError={handleGoogleError}

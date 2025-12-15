@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import styles from "./Moviedetails.module.css";
 import { useCart } from "./CartContext";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 function MovieDetails() {
     const { id } = useParams();
@@ -40,6 +41,7 @@ function MovieDetails() {
 
     return (
         <>
+        <Navbar />
             <div className={styles.movieDetailsContainer}>
                 <div className={styles.movieCard}>
                     <div className={styles.movieContent}>

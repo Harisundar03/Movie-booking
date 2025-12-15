@@ -1,22 +1,27 @@
 import { useCart } from './CartContext';
 import { Link } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
 import styles from './Cart.module.css';
 
 const Cart = () => {
     const { cart, increaseQuantity, decreaseQuantity, removeFromCart, getTotalPrice } = useCart();
     if (cart.length === 0) {
         return (
+            <>
+            <Navbar />
             <div className={styles.cartContainer}>
                 <h2 className={styles.cartTitle}>Your Cart is Empty</h2>
                 <Link to="/">
                     <button className={styles.emptyBtn}>Continue Shopping</button>
                 </Link>
             </div>
+            </>
         );
     }
 
     return (
-        
+        <>
+        <Navbar />
         <div className={styles.cartContainer}>
             <h1 className={styles.cartTitle}>Book Your Peace</h1>
 
@@ -62,7 +67,7 @@ const Cart = () => {
             </button>
             </div>
             
-        
+        </>
     );
 };
 
