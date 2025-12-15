@@ -1,0 +1,229 @@
+/* Loading state */
+.loadingContainer {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+/* Full page container – card-ஐ center-la வைக்க */
+.movieDetailsContainer {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 1.25rem;
+}
+
+/* Main card – எல்லா details/ image/ button எல்லாமே இதுக்குள்ள */
+.movieCard {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #ffffff, #f3f4f6);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.18),
+    0 0 0 1px rgba(148, 163, 184, 0.25);
+  overflow: hidden;
+  padding: 1.75rem 1.75rem 1.9rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Inside card layout – left image, right details */
+.movieContent {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Image (poster) */
+.movieImage {
+  width: 38%;
+  max-width: 340px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.4);
+  border: 3px solid transparent;
+  background:
+    linear-gradient(#020617, #020617) padding-box,
+    linear-gradient(135deg, #06b6d4, #3b82f6) border-box;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.movieCard:hover .movieImage {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.55);
+}
+
+/* Right side info (title + meta + description + button) */
+.movieInfo {
+  flex: 1;
+  color: #111827;
+}
+
+/* Title inside card */
+.movieTitle {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 0 0 0.75rem 0;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Meta rows (released / director / budget) */
+.movieMeta {
+  margin-bottom: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.35rem 1.5rem;
+  font-size: 0.98rem;
+  color: #4b5563;
+}
+
+.movieMeta p {
+  margin: 0.2rem 0;
+}
+
+/* Label (Released, Director, Budget) */
+.label {
+  font-weight: 600;
+  color: #111827;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+/* Description box inside card */
+.movieDescription {
+  margin: 0 0 1.75rem 0;
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  background: rgba(59, 130, 246, 0.05);
+  border-left: 4px solid rgba(59, 130, 246, 0.6);
+  color: #374151;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* Add to cart button – card footer feel */
+.addToCartBtn {
+  border: none;
+  outline: none;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #6366f1 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow:
+    0 14px 30px rgba(37, 99, 235, 0.5),
+    0 0 0 1px rgba(191, 219, 254, 0.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.addToCartBtn:hover {
+  transform: translateY(-2px) scale(1.02);
+  filter: brightness(1.03);
+  box-shadow:
+    0 20px 40px rgba(37, 99, 235, 0.65),
+    0 0 0 1px rgba(191, 219, 254, 1);
+}
+
+.addToCartBtn:active {
+  transform: translateY(0) scale(0.99);
+  box-shadow:
+    0 8px 18px rgba(37, 99, 235, 0.45),
+    0 0 0 1px rgba(147, 197, 253, 1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive – small screens, card same but columns -> single column */
+@media (max-width: 900px) {
+  .movieCard {
+    padding: 1.5rem 1.4rem 1.6rem;
+  }
+
+  .movieContent {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .movieImage {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .movieTitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .movieDetailsContainer {
+    padding: 2rem 0.9rem;
+  }
+
+  .movieCard {
+    border-radius: 18px;
+    padding: 1.25rem 1.1rem 1.4rem;
+  }
+
+  .movieDescription {
+    font-size: 0.95rem;
+  }
+
+  .addToCartBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .movieCard {
+    background: radial-gradient(circle at top left, #020617 0%, #020617 55%, #020617 100%);
+    box-shadow:
+      0 22px 50px rgba(0, 0, 0, 0.85),
+      0 0 0 1px rgba(15, 23, 42, 0.9);
+  }
+
+  .movieInfo {
+    color: #e5e7eb;
+  }
+
+  .movieMeta {
+    color: #9ca3af;
+  }
+
+  .label {
+    color: #e5e7eb;
+  }
+
+  .movieDescription {
+    background: rgba(15, 23, 42, 0.9);
+    border-left-color: rgba(56, 189, 248, 0.7);
+    color: #e5e7eb;
+  }
+}

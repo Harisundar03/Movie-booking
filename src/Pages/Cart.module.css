@@ -1,0 +1,142 @@
+/* Cart.module.css */
+
+.cartContainer {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.cartTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+.backBtn,
+.emptyBtn,
+.checkoutBtn,
+.removeBtn,
+.qtyBtn {
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.backBtn {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.backBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.emptyBtn {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.emptyBtn:hover {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+
+.checkoutBtn {
+  background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  color: white;
+  width: 100%;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.checkoutBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.3);
+}
+
+.removeBtn {
+  background: #f87171;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.removeBtn:hover {
+  background: #dc2626;
+}
+
+.qtyBtn {
+  background: #c7c8ca;
+  color: #01060f;
+}
+
+.qtyBtn:hover {
+  background: #e0f2fe;
+}
+
+/* -------- Cart Items -------- */
+.cartItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(145deg, #0fb0d8, #002877);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+  padding: 1rem;
+  /* margin-bottom: 1rem; */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cartItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.18);
+  
+}
+
+.cartImg {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.cartItem:hover .cartImg {
+  transform: scale(1.05);
+}
+
+.itemDetails {
+  flex: 1;
+}
+
+.itemName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.itemPrice {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #051631;
+  margin-bottom: 0.5rem;
+}
+
+.totalBox {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: right;
+  margin-top: 1rem;
+  color: #b4bcc9;
+}

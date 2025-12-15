@@ -1,0 +1,27 @@
+.search {
+  width: 100%;             /* Full width of parent container */
+  padding: 0.5rem 1rem;    /* Vertical & horizontal padding */
+  border-radius: 25px;     /* Rounded pill shape */
+  border: 1px solid #ccc;  /* Light gray border */
+  outline: none;           /* Remove default outline */
+  transition: all 0.3s ease; /* Smooth hover/focus effect */
+  font-size: 1rem;     /* Clean readable font */
+  margin-bottom: 35;
+}
+
+/* Hover effect */
+.search:hover {
+  border-color: #888;      /* Slightly darker border on hover */
+}
+
+/* Focus effect */
+.search:focus {
+  border-color: #007bff;   /* Bootstrap primary color */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* subtle glow */
+}
+
+/* Placeholder styling */
+.search::placeholder {
+  color: #999;             /* Light gray placeholder text */
+  font-style: italic;
+}
